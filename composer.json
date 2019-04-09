@@ -1,0 +1,40 @@
+{
+  "name": "september-werbeagentur/contao-real-estate-bundle",
+  "type": "contao-bundle",
+  "description": "Real estate extension for Contao Open Source CMS",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "September Werbeagentur",
+      "homepage": "https://github.com/september-werbeagentur"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "contao/core-bundle": "4.4.*",
+    "symfony/framework-bundle": "^3.3"
+  },
+  "conflict": {
+    "contao/core": "*",
+    "contao/manager-plugin": "<2.0 || >=3.0"
+  },
+  "require-dev": {
+    "contao/manager-plugin": "^2.0",
+    "doctrine/doctrine-cache-bundle": "^1.3",
+    "phpunit/phpunit": "^5.7.26",
+    "symfony/phpunit-bridge": "^3.2"
+  },
+  "extra": {
+    "contao-manager-plugin": "SeptemberWerbeagentur\\ContaoRealEstateBundle\\ContaoManager\\Plugin"
+  },
+  "autoload": {
+    "psr-4": {
+      "SeptemberWerbeagentur\\ContaoRealEstateBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SeptemberWerbeagentur\\ContaoRealEstateBundle\\": "tests/"
+    }
+  }
+}
