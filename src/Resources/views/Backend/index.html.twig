@@ -1,0 +1,17 @@
+{% trans_default_domain 'default' %}
+{% extends "@ContaoCore/Backend/be_page.html.twig" %}
+
+{% block headline %}
+    {{ 'Real Estate'|trans }}
+{% endblock %}
+
+{% block main %}
+    <div id="tl_buttons">
+        <a href="#" class="header_back" title="{{ 'Go back'|trans }}">{{ 'Go back'|trans }}</a>
+    </div>
+    <div id="tl_maintenance_mode" class="maintenance_inactive">
+        {# TODO replace with actual content #}
+        <h2 class="sub_headline">Success!</h2>
+    </div>
+{% endblock %}
+

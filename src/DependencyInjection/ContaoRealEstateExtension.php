@@ -22,3 +22,4 @@ class ContaoRealEstateExtension extends Extension
         $loader->load('services.yml');
     }
 }
+
