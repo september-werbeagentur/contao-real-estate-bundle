@@ -3,6 +3,7 @@
 $GLOBALS['TL_DCA']['tl_realestate'] = [
     'config' => [
         'dataContainer' => 'Table',
+        'ctable' => array('tl_realestate_apartments'),
         'switchToEdit' => true,
         'enableVersioning' => true,
         'sql' => [
@@ -29,7 +30,7 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
         'operations' => [
             'edit' => [
                 'label' => &$GLOBALS['TL_LANG']['tl_realestate']['edit'],
-                'href' => 'table=tl_realestate',
+                'href' => 'table=tl_realestate_apartments',
                 'icon' => 'edit.gif',
             ],
             'editheader' => [
