@@ -13,7 +13,6 @@ $GLOBALS['TL_LANG']['tl_realestate']['show'][1] = 'Details anzeigen';
 
 $GLOBALS['TL_LANG']['tl_realestate']['header_legend'] = 'Kopfbereich';
 $GLOBALS['TL_LANG']['tl_realestate']['details_legend'] = 'Beschreibung und Details';
-$GLOBALS['TL_LANG']['tl_realestate']['image_legend'] = 'Logo und Bild';
 $GLOBALS['TL_LANG']['tl_realestate']['name'][0] = 'Name';
 $GLOBALS['TL_LANG']['tl_realestate']['name'][1] = 'Name des Projekts/Objekts';
 $GLOBALS['TL_LANG']['tl_realestate']['address'][0] = 'Adresse';
