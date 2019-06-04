@@ -1,0 +1,25 @@
+.swa-property-list {
+  $column-gap: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+  overflow: hidden;
+  justify-content: flex-start;
+  column-gap: $column-gap;
+
+  .swa-property-list__property {
+    max-width: 400px;
+    min-width: 300px;
+    width: calc(25% - #{$column-gap} * 3 / 4);
+  }
+
+  .swa-property-list__property-image {
+    margin: 0;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+<div class="swa-property-list">
+    <?php foreach ($this->publishedProperties as $property): ?>
+        <article class="swa-property-list__property">
+            <?php
+            if (null !== ($objImage = \FilesModel::findByUuid($property->image))) {
+                $objImageTemplate = new stdClass();
+                \Controller::addImageToTemplate($objImageTemplate, [
+                    'singleSRC' => $objImage->path,
+                    'size' => [null, null, '11'],
+                    'class' => 'swa-property-list__image',
+                ], \Config::get('maxImageWidth'), null, $objImage);
+                $this->insert('image', (array)$objImageTemplate);
+            }
+            ?>
+            <h1 class="swa-property-list__property-name"><?= $property->name; ?></h1>
+            <div class="swa-property-list__property-teaser"><?= $property->teaser; ?></div>
+        </article>
+    <?php endforeach; ?>
+</div>
+<?php $this->endblock(); ?>
+
