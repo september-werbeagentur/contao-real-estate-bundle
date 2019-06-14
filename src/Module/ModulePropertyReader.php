@@ -5,6 +5,7 @@ namespace SeptemberWerbeagentur\ContaoRealEstateBundle\Module;
 use Contao\Config;
 use Contao\Input;
 use Contao\Module as Module;
+use Contao\PageModel;
 use Contao\StringUtil;
 use Patchwork\Utf8;
 use SeptemberWerbeagentur\ContaoRealEstateBundle\Model\RealestateModel as RealestateModel;
@@ -63,6 +64,7 @@ class ModulePropertyReader extends Module
 		global $objPage;
 		$this->Template->back = $GLOBALS['TL_LANG']['MSC']['goBack'];
 		$this->Template->referer = 'javascript:history.go(-1)';
+
 
 		$objProperty = RealestateModel::findByIdOrAlias(Input::get('items'));
         if (null !== ($objImage = \FilesModel::findByUuid($objProperty->image))) {
