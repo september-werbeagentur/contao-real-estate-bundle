@@ -38,19 +38,17 @@ class ModulePropertyReader extends Module
         }
 
         // Set the item from the auto_item parameter
-		if (!isset($_GET['items']) && Config::get('useAutoItem') && isset($_GET['auto_item']))
-		{
-			Input::setGet('items', Input::get('auto_item'));
-		}
-		// Do not index or cache the page if no property has been specified
-		if (!Input::get('items'))
-		{
-			/** @var PageModel $objPage */
-			global $objPage;
-			$objPage->noSearch = 1;
-			$objPage->cache = 0;
-			return '';
-		}
+        if (!isset($_GET['items']) && Config::get('useAutoItem') && isset($_GET['auto_item'])) {
+            Input::setGet('items', Input::get('auto_item'));
+        }
+        // Do not index or cache the page if no property has been specified
+        if (!Input::get('items')) {
+            /** @var PageModel $objPage */
+            global $objPage;
+            $objPage->noSearch = 1;
+            $objPage->cache = 0;
+            return '';
+        }
 
         return parent::generate();
     }
@@ -61,12 +59,11 @@ class ModulePropertyReader extends Module
     protected function compile()
     {
         /** @var PageModel $objPage */
-		global $objPage;
-		$this->Template->back = $GLOBALS['TL_LANG']['MSC']['goBack'];
-		$this->Template->referer = 'javascript:history.go(-1)';
+        global $objPage;
+        $this->Template->back = $GLOBALS['TL_LANG']['MSC']['goBack'];
+        $this->Template->referer = 'javascript:history.go(-1)';
 
-
-		$objProperty = RealestateModel::findByIdOrAlias(Input::get('items'));
+        $objProperty = RealestateModel::findByIdOrAlias(Input::get('items'));
         if (null !== ($objImage = \FilesModel::findByUuid($objProperty->image))) {
             $this->Template->imagePath = $objImage->path;
         }
@@ -74,8 +71,8 @@ class ModulePropertyReader extends Module
             $this->Template->logoPath = $objImage->path;
         }
 
-		$this->Template->name = $objProperty->name;
-		$this->Template->address = $objProperty->address;
+        $this->Template->name = $objProperty->name;
+        $this->Template->address = $objProperty->address;
         $this->Template->teaser = $objProperty->teaser;
         $this->Template->description = $objProperty->description;
         $this->Template->features = StringUtil::deserialize($objProperty->features);

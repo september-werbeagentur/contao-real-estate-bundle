@@ -42,8 +42,8 @@ class ModulePropertyList extends Module
     protected function compile()
     {
         $this->Template->publishedProperties = $this->getPublishedProperties();
-        $jumpToId = (int) $this->jumpTo;
-		$jumpTo = PageModel::findByPk($jumpToId);
+        $jumpToId = (int)$this->jumpTo;
+        $jumpTo = PageModel::findByPk($jumpToId);
         $this->Template->jumpTo = ampersand($jumpTo->getFrontendUrl());
     }
 
