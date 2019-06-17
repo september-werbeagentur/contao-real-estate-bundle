@@ -8,6 +8,7 @@ use Contao\Module as Module;
 use Contao\PageModel;
 use Contao\StringUtil;
 use Patchwork\Utf8;
+use SeptemberWerbeagentur\ContaoRealEstateBundle\Model\RealestateApartmentsModel;
 use SeptemberWerbeagentur\ContaoRealEstateBundle\Model\RealestateModel as RealestateModel;
 
 class ModulePropertyReader extends Module
@@ -62,6 +63,15 @@ class ModulePropertyReader extends Module
         global $objPage;
         $this->Template->back = $GLOBALS['TL_LANG']['MSC']['goBack'];
         $this->Template->referer = 'javascript:history.go(-1)';
+        $objApartments = RealestateApartmentsModel::findAllByPid($this->id);
+
+        if ($objApartments !== null ) {
+            $arrTemp = array();
+            while ($objApartments->next()) {
+                $arrTemp[] = $objApartments->row();
+            }
+            $this->Template->apartments = $arrTemp;
+        }
 
         $objProperty = RealestateModel::findByIdOrAlias(Input::get('items'));
         if (null !== ($objImage = \FilesModel::findByUuid($objProperty->image))) {
