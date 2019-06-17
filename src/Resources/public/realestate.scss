@@ -8,18 +8,42 @@
   justify-content: flex-start;
   column-gap: $column-gap;
 
-  .swa-property-list__property {
+  &__property {
     max-width: 400px;
     min-width: 300px;
     width: calc(25% - #{$column-gap} * 3 / 4);
   }
 
-  .swa-property-list__property-image {
+  &__property-image {
     margin: 0;
 
     img {
       max-width: 100%;
       height: auto;
     }
+  }
+}
+
+.swa-property-reader {
+  &__title,
+  &__address,
+  &__logo,
+  &__image {
+    display: block;
+    width: max-content;
+    margin: auto;
+  }
+
+  &__description {
+  }
+
+  &__features {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+  }
+
+  &__feature {
+    break-inside: avoid;
   }
 }

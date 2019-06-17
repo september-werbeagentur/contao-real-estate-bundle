@@ -1,0 +1,19 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+<div class="swa-property-reader">
+    <h1 class="swa-property-reader__title"><?= $this->name; ?></h1>
+    <p class="swa-property-reader__address"><?= $this->address; ?></p>
+    <?php //TODO make alt text maintainable in backend ?>
+    <img class="swa-property-reader__logo" src="<?= $this->logoPath; ?>" alt="logo">
+    <img class="swa-property-reader__image" src="<?= $this->imagePath; ?>" alt="Project image">
+    <article class="swa-property-reader__description"><?= $this->description; ?></article>
+
+    <ul class="swa-property-reader__features">
+    <?php foreach ($this->features as $feature) : ?>
+        <li class="swa-property-reader__feature"><?= $feature; ?></li>
+    <?php endforeach; ?>
+    </ul>
+</div>
+<?php $this->endblock(); ?>
+

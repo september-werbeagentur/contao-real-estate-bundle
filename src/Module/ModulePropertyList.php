@@ -3,6 +3,7 @@
 namespace SeptemberWerbeagentur\ContaoRealEstateBundle\Module;
 
 use Contao\Module as Module;
+use Contao\PageModel;
 use Patchwork\Utf8;
 use SeptemberWerbeagentur\ContaoRealEstateBundle\Model\RealestateModel as RealestateModel;
 
@@ -41,6 +42,9 @@ class ModulePropertyList extends Module
     protected function compile()
     {
         $this->Template->publishedProperties = $this->getPublishedProperties();
+        $jumpToId = (int)$this->jumpTo;
+        $jumpTo = PageModel::findByPk($jumpToId);
+        $this->Template->jumpTo = ampersand($jumpTo->getFrontendUrl());
     }
 
     private function getPublishedProperties()

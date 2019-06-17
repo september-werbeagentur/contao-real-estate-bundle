@@ -7,17 +7,31 @@
   justify-content: flex-start;
   column-gap: 20px;
 }
-.swa-property-list .swa-property-list__property {
+.swa-property-list__property {
   max-width: 400px;
   min-width: 300px;
   width: calc(25% - 20px * 3 / 4);
 }
-.swa-property-list .swa-property-list__property-image {
+.swa-property-list__property-image {
   margin: 0;
 }
-.swa-property-list .swa-property-list__property-image img {
+.swa-property-list__property-image img {
   max-width: 100%;
   height: auto;
+}
+
+.swa-property-reader__title, .swa-property-reader__address, .swa-property-reader__logo, .swa-property-reader__image {
+  display: block;
+  width: max-content;
+  margin: auto;
+}
+.swa-property-reader__features {
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
+}
+.swa-property-reader__feature {
+  break-inside: avoid;
 }
 
 /*# sourceMappingURL=realestate.css.map */
