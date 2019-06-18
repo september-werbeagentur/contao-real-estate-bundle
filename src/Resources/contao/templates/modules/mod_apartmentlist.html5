@@ -1,0 +1,26 @@
+<section class="swa-apartment-list">
+    <?php /* TODO: Add title here */ ?>
+    <h1 class="swa-apartment-list__title">Title Here</h1>
+    <table class="swa-apartment-list__apartments">
+        <tr>
+            <th>WE-Nr.</th>
+            <th>Etage</th>
+            <th>Zimmer</th>
+            <th>Wohnfläche</th>
+            <th>Sonstiges</th>
+            <th>Verfügbarkeit</th>
+            <th>Grundriss</th>
+        </tr>
+        <?php foreach ($this->apartments as $apartment) : ?>
+            <tr class="swa-apartment-list__apartment">
+                <td><?=$apartment['number'];?></td>
+                <td><?=$apartment['floor'];?></td>
+                <td><?=$apartment['roomcount'];?></td>
+                <td><?=$apartment['area'];?></td>
+                <td><?=$apartment['highlights'];?></td>
+                <td><?=$apartment['availability'];?></td>
+                <td>TODO</td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</section>
