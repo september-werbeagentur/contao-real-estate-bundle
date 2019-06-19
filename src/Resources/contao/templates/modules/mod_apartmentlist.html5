@@ -3,6 +3,7 @@
     <h1 class="swa-apartment-list__title">Title Here</h1>
     <table class="swa-apartment-list__apartments">
         <tr>
+            <?php // TODO: Use language variables ?>
             <th>WE-Nr.</th>
             <th>Etage</th>
             <th>Zimmer</th>
