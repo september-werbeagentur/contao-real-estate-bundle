@@ -3,7 +3,7 @@
 $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
     'config' => [
         'dataContainer' => 'Table',
-        'ptable' => 'tl_realestate',
+        'ptable' => 'tl_realestate_objects',
         'switchToEdit' => true,
         'enableVersioning' => true,
         'sql' => [
@@ -63,7 +63,7 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
         ],
         'pid' => array
 		(
-			'foreignKey'              => 'tl_realestate.id',
+			'foreignKey'              => 'tl_realestate_objects.id',
 			'sql'                     => "int(10) unsigned NOT NULL default 0",
 			'relation'                => array('type'=>'belongsTo', 'load'=>'lazy')
 		),
