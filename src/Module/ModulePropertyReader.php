@@ -63,6 +63,9 @@ class ModulePropertyReader extends Module
         global $objPage;
         $this->Template->back = $GLOBALS['TL_LANG']['MSC']['goBack'];
         $this->Template->referer = 'javascript:history.go(-1)';
+        $jumpToId = (int)$this->jumpTo;
+        $jumpTo = PageModel::findByPk($jumpToId);
+        $this->Template->jumpTo = ampersand($jumpTo->getFrontendUrl());
         $objApartments = RealestateApartmentsModel::findAllByPid($this->id);
 
         if ($objApartments !== null ) {

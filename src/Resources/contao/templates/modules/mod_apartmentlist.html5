@@ -13,7 +13,7 @@
             <th>Grundriss</th>
         </tr>
         <?php foreach ($this->apartments as $apartment) : ?>
-            <tr class="swa-apartment-list__apartment">
+            <tr class="swa-apartment-list__apartment" onclick="window.location='<?=$this->jumpTo. "?items=" . $apartment['id'];?>'">
                 <td><?=$apartment['number'];?></td>
                 <td><?=$apartment['floor'];?></td>
                 <td><?=$apartment['roomcount'];?></td>

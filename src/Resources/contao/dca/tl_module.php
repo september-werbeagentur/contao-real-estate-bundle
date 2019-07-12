@@ -1,7 +1,8 @@
 <?php
 
 // Add palette to tl_module
-$GLOBALS['TL_DCA']['tl_module']['palettes']['propertylist'] = '{title_legend},name,type,jumpTo,september_realEstate_jumpTo;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['propertylist'] = '{title_legend},name,type,jumpTo;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['propertyreader'] = '{title_legend},name,type,jumpTo;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['september_realEstate_jumpTo'] = array
