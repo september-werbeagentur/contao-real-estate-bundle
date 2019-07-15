@@ -9,6 +9,8 @@ use Contao\PageModel;
 use Contao\StringUtil;
 use Patchwork\Utf8;
 use SeptemberWerbeagentur\ContaoRealEstateBundle\Model\RealestateApartmentsModel;
+use SeptemberWerbeagentur\ContaoRealEstateBundle\Model\RealestateModel;
+use SeptemberWerbeagentur\ContaoRealEstateBundle\Model\RealestateObjectsModel;
 
 class ModuleApartmentReader extends Module
 {
@@ -60,22 +62,33 @@ class ModuleApartmentReader extends Module
     {
         /** @var PageModel $objPage */
         global $objPage;
+
+        $objApartment = RealestateApartmentsModel::findByIdOrAlias(Input::get('items'));
+
         $this->Template->back = $GLOBALS['TL_LANG']['MSC']['goBack'];
         $this->Template->referer = 'javascript:history.go(-1)';
 
-        $objApartment = RealestateApartmentsModel::findByIdOrAlias(Input::get('items'));
         if (null !== ($objImage = \FilesModel::findByUuid($objApartment->image))) {
             $this->Template->imagePath = $objImage->path;
         }
+
+        // Get address from the project
+        $objObject = RealestateObjectsModel::findByPk($objApartment->pid);
+        $objProject = RealestateModel::findByPk($objObject->pid);
+        $this->Template->address = $objProject->address;
+        $this->Template->projectName = $objProject->name;
 
         $this->Template->name = $objApartment->name;
         $this->Template->availability = $objApartment->availability;
         $this->Template->number = $objApartment->number;
         $this->Template->floor = $objApartment->floor;
         $this->Template->roomcount = $objApartment->roomcount;
+        $this->Template->rooms = StringUtil::deserialize($objApartment->rooms);
         $this->Template->area = $objApartment->area;
         $this->Template->description = $objApartment->description;
-        $this->Template->highlights = StringUtil::deserialize($objApartment->highlights);
-        $this->Template->features = StringUtil::deserialize($objApartment->features);
+        $this->Template->highlights = $objApartment->highlights;
+        $this->Template->features_apartment = StringUtil::deserialize($objApartment->features_apartment);
+        $this->Template->features_object = StringUtil::deserialize($objApartment->features_object);
+        $this->Template->features_infrastructure = StringUtil::deserialize($objApartment->features_infrastructure);
     }
 }

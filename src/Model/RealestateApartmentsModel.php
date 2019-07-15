@@ -18,4 +18,8 @@ class RealestateApartmentsModel extends Model
 
         return static::findBy($arrColumns, $pid, array());
     }
+
+    public static function findAddressByPid(int $pid)
+    {
+    }
 }
