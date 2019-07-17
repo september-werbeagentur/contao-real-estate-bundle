@@ -7,7 +7,9 @@
     <aside class="swa-apartment-reader__address"><?=$this->projectName;?><br><?=$this->address;?></aside>
 
     <?php //TODO make alt text maintainable in backend ?>
-    <img class="swa-apartment-reader__image" src="<?= $this->imagePath; ?>" alt="Project image">
+    <?php if (count($this->blueprintPaths) > 0) : ?>
+        <img class="swa-apartment-reader__blueprint" src="<?= $this->blueprintPaths[0]; ?>" alt="Project image">
+    <?php endif; ?>
 
     <aside class="swa-apartment-reader__highlights">
         <?=$this->highlights;?>
@@ -54,6 +56,9 @@
     <?php endif; ?>
 
     <article class="swa-apartment-reader__description"><?= $this->description; ?></article>
+</div>
+<div>
+    <?php $this->showTemplateVars(); ?>
 </div>
 <?php $this->endblock(); ?>
 

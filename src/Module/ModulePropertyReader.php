@@ -85,7 +85,15 @@ class ModulePropertyReader extends Module
                 if ($objApartments !== null) {
                     $arrTempApartments = array();
                     foreach ($objApartments as $apartment) {
-                        $arrTempApartments[] = $apartment->row();
+                        $arrTempApartments[$apartment->id] = $apartment->row();
+                        $arrBlueprints = StringUtil::deserialize($apartment->blueprints);
+                        $blueprintPaths = [];
+                        foreach ($arrBlueprints as $blueprint) {
+                            if (null !== ($objBlueprint = \FilesModel::findByUuid($blueprint))) {
+                                $blueprintPaths[] = $objBlueprint->path;
+                            }
+                        }
+                        $arrTempApartments[$apartment->id]['blueprint_paths'] = $blueprintPaths;
                     }
                     $arrTemp[$object->id]['apartments'] = $arrTempApartments;
                 }

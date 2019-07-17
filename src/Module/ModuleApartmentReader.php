@@ -71,6 +71,15 @@ class ModuleApartmentReader extends Module
         if (null !== ($objImage = \FilesModel::findByUuid($objApartment->image))) {
             $this->Template->imagePath = $objImage->path;
         }
+        $arrBlueprints = StringUtil::deserialize($objApartment->blueprints);
+        $blueprintPaths = [];
+        foreach ($arrBlueprints as $blueprint) {
+            if (null !== ($objBlueprint = \FilesModel::findByUuid($blueprint))) {
+                 $blueprintPaths[] = $objBlueprint->path;
+            }
+        }
+
+        $this->Template->blueprintPaths = $blueprintPaths;
 
         // Get address from the project
         $objObject = RealestateObjectsModel::findByPk($objApartment->pid);

@@ -18,7 +18,11 @@
                 <td><?=$apartment['area'];?></td>
                 <td><?=$apartment['misc'];?></td>
                 <td><?=$apartment['availability'];?></td>
-                <td>TODO</td>
+                <td>
+                    <?php foreach ($apartment['blueprint_paths'] as $blueprintPath) : ?>
+                        <img class="swa-apartment-reader__blueprint" width="32" src="<?= $blueprintPath; ?>" alt="Blueprint">
+                    <?php endforeach; ?>
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>
