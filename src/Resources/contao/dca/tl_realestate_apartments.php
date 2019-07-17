@@ -51,7 +51,7 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
     ],
     'palettes' => [
         '__selector__' => [],
-        'default' => '{data_legend},number,floor,roomcount,rooms,area,availability;{details_legend},description,highlights,features_apartment,features_object,features_infrastructure,image,blueprints',
+        'default' => '{data_legend},number,floor,roomcount,rooms,misc,area,availability;{details_legend},description,highlights,features_apartment,features_object,features_infrastructure,image,blueprints',
     ],
     // TODO add 'availability'
     'fields' => [
@@ -124,6 +124,12 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             'inputType' => 'textarea',
             'eval' => ['mandatory' => true, 'rte' => 'tinyMCE', 'helpwizard' => true],
             'sql' => "text NULL"
+        ],
+        'misc' => [
+            'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['misc'],
+            'inputType' => 'text',
+            'eval' => ['mandatory' => true],
+            'sql' => "varchar(50) NULL"
         ],
         'description' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['description'],

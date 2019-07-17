@@ -18,7 +18,7 @@
                 <td><?=$apartment['floor'];?></td>
                 <td><?=$apartment['roomcount'];?></td>
                 <td><?=$apartment['area'];?></td>
-                <td><?=$apartment['highlights'];?></td>
+                <td><?=$apartment['misc'];?></td>
                 <td><?=$apartment['availability'];?></td>
                 <td>TODO</td>
             </tr>
