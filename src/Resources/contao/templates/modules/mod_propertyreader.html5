@@ -9,11 +9,13 @@
     <img class="swa-property-reader__image" src="<?= $this->imagePath; ?>" alt="Project image">
     <article class="swa-property-reader__description"><?= $this->description; ?></article>
 
+    <h2>Ausstattungsdetails</h2>
     <ul class="swa-property-reader__features">
     <?php foreach ($this->features as $feature) : ?>
         <li class="swa-property-reader__feature"><?= $feature; ?></li>
     <?php endforeach; ?>
     </ul>
+    <?php $this->insert('mod_objectlist', array('objects' => $this->objects, 'jumpTo' => $this->jumpTo)); ?>
 </div>
 <?php $this->endblock(); ?>
 

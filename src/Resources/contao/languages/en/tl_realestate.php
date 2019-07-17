@@ -27,3 +27,7 @@ $GLOBALS['TL_LANG']['tl_realestate']['logo'][0] = 'Logo';
 $GLOBALS['TL_LANG']['tl_realestate']['logo'][1] = 'Choose a logo for the property/project';
 $GLOBALS['TL_LANG']['tl_realestate']['image'][0] = 'image';
 $GLOBALS['TL_LANG']['tl_realestate']['image'][1] = 'Choose an image for the property/project';
+
+$GLOBALS['TL_LANG']['tl_realestate']['apartment_features'] = 'Die Wohnung';
+$GLOBALS['TL_LANG']['tl_realestate']['object_features'] = 'Die Wohnanlage';
+$GLOBALS['TL_LANG']['tl_realestate']['infrastructure_features'] = 'Energie/Versorgung';

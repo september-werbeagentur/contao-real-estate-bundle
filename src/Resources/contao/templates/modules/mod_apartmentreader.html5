@@ -1,0 +1,61 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+<div class="swa-apartment-reader">
+    <a class="backlink" href="<?=$this->referer;?>"><?=$this->back;?></a>
+    <h1 class="swa-apartment-reader__heading">Wohnung Nr. <?=$this->number;?>, <?=$this->floor;?></h1>
+    <aside class="swa-apartment-reader__address"><?=$this->projectName;?><br><?=$this->address;?></aside>
+
+    <?php //TODO make alt text maintainable in backend ?>
+    <?php if (count($this->blueprintPaths) > 0) : ?>
+        <img class="swa-apartment-reader__blueprint" src="<?= $this->blueprintPaths[0]; ?>" alt="Project image">
+    <?php endif; ?>
+
+    <aside class="swa-apartment-reader__highlights">
+        <?=$this->highlights;?>
+    </aside>
+
+    <table class="swa-apartment-reader__rooms">
+        <?php foreach ($this->rooms as $room) : ?>
+            <tr>
+                <td><?=$room[0];?></td>
+                <td><?=$room[1];?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+
+    <?php foreach ($this->highlights as $highlight) : ?>
+        <li class="swa-apartment-reader__feature"><?= $highlight; ?></li>
+    <?php endforeach; ?>
+
+    <?php if($this->features_apartment) : ?>
+        <h2>Die Wohnung</h2>
+        <ul class="swa-apartment-reader__features">
+        <?php foreach ($this->features_apartment as $feature) : ?>
+                <li class="swa-apartment-reader__feature"><?= $feature; ?></li>
+        <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+
+    <?php if($this->features_object) : ?>
+        <h2>Die Wohnanlage</h2>
+        <ul class="swa-apartment-reader__features">
+        <?php foreach ($this->features_object as $feature) : ?>
+                <li class="swa-apartment-reader__feature"><?= $feature; ?></li>
+        <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+
+    <?php if($this->features_infrastructure) : ?>
+        <h2>Energie/Versorgung</h2>
+        <ul class="swa-apartment-reader__features">
+        <?php foreach ($this->features_infrastructure as $feature) : ?>
+                <li class="swa-apartment-reader__feature"><?= $feature; ?></li>
+        <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+
+    <article class="swa-apartment-reader__description"><?= $this->description; ?></article>
+</div>
+<?php $this->endblock(); ?>
+

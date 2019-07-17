@@ -31,4 +31,6 @@ $GLOBALS['TL_LANG']['tl_realestate_apartments']['blueprints'][1] = 'Geben Sie ei
 $GLOBALS['TL_LANG']['tl_realestate_apartments']['image'][0] = 'Bild';
 $GLOBALS['TL_LANG']['tl_realestate_apartments']['image'][1] = 'Wählen Sie ein Bild für das Projekt aus.';
 
-
+$GLOBALS['TL_LANG']['tl_realestate_apartments']['features_apartment'][0] = 'Die Wohnung';
+$GLOBALS['TL_LANG']['tl_realestate_apartments']['features_object'][0] = 'Die Wohnanlage';
+$GLOBALS['TL_LANG']['tl_realestate_apartments']['features_infrastructure'][0] = 'Energie/Versorgung';

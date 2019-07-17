@@ -1,0 +1,29 @@
+<section class="swa-apartment-list">
+    <table class="swa-apartment-list__apartments">
+        <tr>
+            <?php // TODO: Use language variables ?>
+            <th>WE-Nr.</th>
+            <th>Etage</th>
+            <th>Zimmer</th>
+            <th>Wohnfläche</th>
+            <th>Sonstiges</th>
+            <th>Verfügbarkeit</th>
+            <th>Grundriss</th>
+        </tr>
+        <?php foreach ($this->apartments as $apartment) : ?>
+            <tr class="swa-apartment-list__apartment" onclick="window.location='<?=$this->jumpTo. "?items=" . $apartment['id'];?>'">
+                <td><?=$apartment['number'];?></td>
+                <td><?=$apartment['floor'];?></td>
+                <td><?=$apartment['roomcount'];?></td>
+                <td><?=$apartment['area'];?></td>
+                <td><?=$apartment['misc'];?></td>
+                <td><?=$apartment['availability'];?></td>
+                <td>
+                    <?php foreach ($apartment['blueprint_paths'] as $blueprintPath) : ?>
+                        <img class="swa-apartment-reader__blueprint" width="32" src="<?= $blueprintPath; ?>" alt="Blueprint">
+                    <?php endforeach; ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</section>
