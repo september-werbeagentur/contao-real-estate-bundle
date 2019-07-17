@@ -57,8 +57,5 @@
 
     <article class="swa-apartment-reader__description"><?= $this->description; ?></article>
 </div>
-<div>
-    <?php $this->showTemplateVars(); ?>
-</div>
 <?php $this->endblock(); ?>
 
