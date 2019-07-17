@@ -10,6 +10,7 @@ use Contao\StringUtil;
 use Patchwork\Utf8;
 use SeptemberWerbeagentur\ContaoRealEstateBundle\Model\RealestateApartmentsModel;
 use SeptemberWerbeagentur\ContaoRealEstateBundle\Model\RealestateModel as RealestateModel;
+use SeptemberWerbeagentur\ContaoRealEstateBundle\Model\RealestateObjectsModel;
 
 class ModulePropertyReader extends Module
 {
@@ -66,15 +67,6 @@ class ModulePropertyReader extends Module
         $jumpToId = (int)$this->jumpTo;
         $jumpTo = PageModel::findByPk($jumpToId);
         $this->Template->jumpTo = ampersand($jumpTo->getFrontendUrl());
-        $objApartments = RealestateApartmentsModel::findAllByPid($this->id);
-
-        if ($objApartments !== null ) {
-            $arrTemp = array();
-            while ($objApartments->next()) {
-                $arrTemp[] = $objApartments->row();
-            }
-            $this->Template->apartments = $arrTemp;
-        }
 
         $objProperty = RealestateModel::findByIdOrAlias(Input::get('items'));
         if (null !== ($objImage = \FilesModel::findByUuid($objProperty->image))) {
@@ -84,6 +76,22 @@ class ModulePropertyReader extends Module
             $this->Template->logoPath = $objImage->path;
         }
 
+        $objObjects = RealestateObjectsModel::findAllByPid($objProperty->id);
+        if ($objObjects !== null) {
+            $arrTemp = array();
+            foreach ($objObjects as $object) {
+                $objApartments = RealestateApartmentsModel::findAllByPid($object->id);
+                $arrTemp[$object->id] = $object->row();
+                if ($objApartments !== null) {
+                    $arrTempApartments = array();
+                    foreach ($objApartments as $apartment) {
+                        $arrTempApartments[] = $apartment->row();
+                    }
+                    $arrTemp[$object->id]['apartments'] = $arrTempApartments;
+                }
+            }
+            $this->Template->objects = $arrTemp;
+        }
         $this->Template->name = $objProperty->name;
         $this->Template->address = $objProperty->address;
         $this->Template->teaser = $objProperty->teaser;

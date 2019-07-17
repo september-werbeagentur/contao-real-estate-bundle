@@ -13,4 +13,10 @@ class RealestateObjectsModel extends Model
      */
     protected static $strTable = 'tl_realestate_objects';
 
+    public static function findAllByPid(int $pid) {
+        $t = static::$strTable;
+        $arrColumns = array("$t.pid=?");
+
+        return static::findBy($arrColumns, $pid, array());
+    }
 }

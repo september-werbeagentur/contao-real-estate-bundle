@@ -1,0 +1,7 @@
+<section class="swa-object-list">
+    <?php /* TODO: Add title here */ ?>
+    <h1 class="swa-object-list__title">Title Here</h1>
+    <?php foreach ($this->objects as $object) : ?>
+        <?php $this->insert('mod_apartmentlist', array('apartments' => $object['apartments'], 'jumpTo' => $this->jumpTo)); ?>
+    <?php endforeach; ?>
+</section>

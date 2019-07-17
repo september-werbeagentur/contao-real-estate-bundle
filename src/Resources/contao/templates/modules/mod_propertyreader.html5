@@ -14,7 +14,10 @@
         <li class="swa-property-reader__feature"><?= $feature; ?></li>
     <?php endforeach; ?>
     </ul>
-    <?php $this->insert('mod_apartmentlist', array('apartments' => $this->apartments, 'jumpTo' => $this->jumpTo)); ?>
+    <?php $this->insert('mod_objectlist', array('objects' => $this->objects, 'jumpTo' => $this->jumpTo)); ?>
+</div>
+<div>
+    <?php $this->showTemplateVars(); ?>
 </div>
 <?php $this->endblock(); ?>
 
