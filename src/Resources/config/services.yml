@@ -7,10 +7,3 @@ services:
       calls:
         - ["setContainer", ["@service_container"]]
   _defaults: {public: true}
-  real_estate.navigation_listener:
-    class: SeptemberWerbeagentur\ContaoRealEstateBundle\EventListener\NavigationListener
-    arguments:
-      - "@request_stack"
-      - "@router"
-    tags:
-      - { name: contao.hook, hook: getUserNavigation }
