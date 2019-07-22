@@ -18,4 +18,3 @@
     <?php $this->insert('mod_objectlist', array('objects' => $this->objects, 'jumpTo' => $this->jumpTo)); ?>
 </div>
 <?php $this->endblock(); ?>
-
