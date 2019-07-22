@@ -16,7 +16,7 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
         'sorting' => [
             'mode' => 4,
             'fields' => ['number','roomcount','floor'],
-            'headerFields' => ['name','address'],
+            'headerFields' => ['name'],
             'flag' => 1,
             'panelLayout' => 'debug;filter;sort,search,limit',
             'child_record_callback' => array('tl_realestate_apartments', 'listEntries'),
@@ -51,7 +51,7 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
     ],
     'palettes' => [
         '__selector__' => [],
-        'default' => '{data_legend},number,floor,roomcount,rooms,misc,area,availability;{details_legend},description,highlights,features_apartment,features_object,features_infrastructure,image,blueprints',
+        'default' => '{data_legend},number,floor,roomcount,rooms,misc,area,availability;{details_legend},description,highlights;{features_legend},features_apartment,features_object,features_infrastructure;{image_legend},image,blueprints',
     ],
     // TODO add 'availability'
     'fields' => [

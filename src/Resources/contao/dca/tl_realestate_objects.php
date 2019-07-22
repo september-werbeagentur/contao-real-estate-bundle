@@ -74,7 +74,7 @@ $GLOBALS['TL_DCA']['tl_realestate_objects'] = [
 			'relation'                => array('type'=>'belongsTo', 'load'=>'lazy')
 		),
         'name' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_realestate']['name'],
+            'label' => &$GLOBALS['TL_LANG']['tl_realestate_objects']['name'],
             'search' => true,
             'sorting' => true,
             'flag' => 1,
@@ -108,8 +108,7 @@ class tl_realestate_objects extends Contao\Backend
         return <<<EOF
 <div class="tl_content_left">
     <ul>
-        <li><strong>{$GLOBALS['TL_LANG']['tl_realestate_objects']['name'][0]}: {$arrRow['name']}</strong>
-        <li>{$GLOBALS['TL_LANG']['tl_realestate_objects']['description'][0]}: {$arrRow['description']}
+        <li>{$arrRow['name']}</strong>
     </ul>
 </div>
 EOF;
