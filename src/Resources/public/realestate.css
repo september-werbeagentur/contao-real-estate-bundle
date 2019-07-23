@@ -34,4 +34,8 @@
   break-inside: avoid;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=realestate.css.map */

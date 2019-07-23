@@ -14,14 +14,13 @@
         </thead>
         <tbody>
         <?php foreach ($this->apartments as $apartment) : ?>
-            <tr class="swa-apartment-list__apartment"
-                onclick="window.location='<?= $this->jumpTo . "?items=" . $apartment['id']; ?>'">
-                <td><?= $apartment['number']; ?></td>
-                <td><?= $apartment['floor']; ?></td>
-                <td><?= $apartment['roomcount']; ?></td>
-                <td><?= $apartment['area']; ?></td>
-                <td><?= $apartment['misc']; ?></td>
-                <td><?= $apartment['availability']; ?></td>
+            <tr class="swa-apartment-list__apartment">
+                <td class="clickable" onclick="window.location='<?= $this->jumpTo . "?items=" . $apartment['id']; ?>'"><?= $apartment['number']; ?></td>
+                <td class="clickable" onclick="window.location='<?= $this->jumpTo . "?items=" . $apartment['id']; ?>'"><?= $apartment['floor']; ?></td>
+                <td class="clickable" onclick="window.location='<?= $this->jumpTo . "?items=" . $apartment['id']; ?>'"><?= $apartment['roomcount']; ?></td>
+                <td class="clickable" onclick="window.location='<?= $this->jumpTo . "?items=" . $apartment['id']; ?>'"><?= $apartment['area']; ?></td>
+                <td class="clickable" onclick="window.location='<?= $this->jumpTo . "?items=" . $apartment['id']; ?>'"><?= $apartment['misc']; ?></td>
+                <td class="clickable" onclick="window.location='<?= $this->jumpTo . "?items=" . $apartment['id']; ?>'"><?= $apartment['availability']; ?></td>
                 <td>
                     <?php foreach ($apartment['blueprint_paths'] as $blueprintPath) : ?>
                         <a href="<?= $blueprintPath; ?>" data-lightbox="">
