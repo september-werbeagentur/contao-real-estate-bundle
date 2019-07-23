@@ -1,6 +1,0 @@
-contao_real_estate:
-  path: /contao/realestate
-  defaults:
-    _scope: backend
-    _token_check: true
-    _controller: "ContaoRealEstateBundle:Backend:index"
