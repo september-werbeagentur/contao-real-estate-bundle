@@ -7,6 +7,12 @@
   justify-content: flex-start;
   column-gap: 20px;
 }
+.swa-property-list__link {
+  display: block;
+}
+.swa-property-list__link:hover {
+  text-decoration: none;
+}
 .swa-property-list__property {
   max-width: 400px;
   min-width: 300px;
