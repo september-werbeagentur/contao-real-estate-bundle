@@ -20,7 +20,7 @@
                 <td class="clickable" onclick="window.location='<?= $this->jumpTo . "?items=" . $apartment['id']; ?>'"><?= $apartment['roomcount']; ?></td>
                 <td class="clickable" onclick="window.location='<?= $this->jumpTo . "?items=" . $apartment['id']; ?>'"><?= $apartment['area']; ?></td>
                 <td class="clickable" onclick="window.location='<?= $this->jumpTo . "?items=" . $apartment['id']; ?>'"><?= $apartment['misc']; ?></td>
-                <td class="clickable" onclick="window.location='<?= $this->jumpTo . "?items=" . $apartment['id']; ?>'"><?= $apartment['availability']; ?></td>
+                <td class="clickable swa-apartment-list__availability swa-apartment-list__availability--<?= $apartment['availability']; ?>" onclick="window.location='<?= $this->jumpTo . "?items=" . $apartment['id']; ?>'"><?= $GLOBALS['TL_LANG']['tl_realestate_apartments'][$apartment['availability']]; ?></td>
                 <td>
                     <?php foreach ($apartment['blueprint_paths'] as $blueprintPath) : ?>
                         <a href="<?= $blueprintPath; ?>" data-lightbox="">

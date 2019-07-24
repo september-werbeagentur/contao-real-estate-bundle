@@ -115,8 +115,10 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             'search' => true,
             'sorting' => true,
             'flag' => 1,
-            'inputType' => 'text',
-            'eval' => ['mandatory' => true, 'maxlength' => 20, 'tl_class' => 'w50'],
+            'inputType' => 'select',
+            'options' => ['','available','sold','reserved'],
+            'reference' => &$GLOBALS['TL_LANG']['tl_realestate_apartments'],
+            'eval' => ['mandatory' => true, 'maxlength' => 20, 'tl_class' => 'w50 wizard'],
             'sql' => "varchar(20) NOT NULL default ''"
         ],
         'highlights' => [
