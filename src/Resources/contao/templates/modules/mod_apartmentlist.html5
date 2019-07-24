@@ -24,7 +24,7 @@
                 <td>
                     <?php foreach ($apartment['blueprint_paths'] as $blueprintPath) : ?>
                         <a href="<?= $blueprintPath; ?>" data-lightbox="">
-                            <img class="swa-apartment-reader__blueprint" width="32" src="<?= $blueprintPath; ?>"
+                            <img class="swa-apartment-list__blueprint" width="32" src="<?= $blueprintPath; ?>"
                                 alt="Blueprint">
                         </a>
                     <?php endforeach; ?>
