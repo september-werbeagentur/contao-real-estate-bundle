@@ -24,6 +24,10 @@
                         <td><?= $room[1]; ?></td>
                     </tr>
                 <?php endforeach; ?>
+                <tr class="swa-apartment-reader__total-area">
+                    <td>Wohnfläche</td>
+                    <td><?= $this->area; ?></td>
+                </tr>
             </table>
         </div>
     </div>
