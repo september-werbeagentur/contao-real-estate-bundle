@@ -43,3 +43,4 @@ $GLOBALS['TL_LANG']['tl_realestate_apartments']['image'][1] = 'Wählen Sie ein B
 $GLOBALS['TL_LANG']['tl_realestate_apartments']['features_apartment'][0] = 'Die Wohnung';
 $GLOBALS['TL_LANG']['tl_realestate_apartments']['features_object'][0] = 'Die Wohnanlage';
 $GLOBALS['TL_LANG']['tl_realestate_apartments']['features_infrastructure'][0] = 'Energie/Versorgung';
+$GLOBALS['TL_LANG']['tl_realestate_apartments']['goBack'] = 'zurück zur Übersicht';
