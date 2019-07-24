@@ -45,9 +45,8 @@
   }
 
   &__features {
-    -webkit-column-count: 4;
-    -moz-column-count: 4;
     column-count: 4;
+    column-gap: 40px;
   }
 
   &__feature {
