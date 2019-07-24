@@ -7,13 +7,17 @@
     <?php //TODO make alt text maintainable in backend ?>
     <img class="swa-property-reader__logo" src="<?= $this->logoPath; ?>" alt="logo">
     <img class="swa-property-reader__image" src="<?= $this->imagePath; ?>" alt="Project image">
-    <article class="swa-property-reader__description"><?= $this->description; ?></article>
-
+    <article class="swa-property-reader__description">
+        <h3 class="swa-property-reader__description-heading"><?= $this->description_heading; ?></h3>
+        <div class="swa-property-reader__description-text">
+            <?= $this->description; ?>
+        </div>
+    </article>
     <h2>Ausstattungsdetails</h2>
     <ul class="swa-property-reader__features">
-    <?php foreach ($this->features as $feature) : ?>
-        <li class="swa-property-reader__feature"><?= $feature; ?></li>
-    <?php endforeach; ?>
+        <?php foreach ($this->features as $feature) : ?>
+            <li class="swa-property-reader__feature"><?= $feature; ?></li>
+        <?php endforeach; ?>
     </ul>
     <?php $this->insert('mod_objectlist', array('objects' => $this->objects, 'jumpTo' => $this->jumpTo)); ?>
 </div>

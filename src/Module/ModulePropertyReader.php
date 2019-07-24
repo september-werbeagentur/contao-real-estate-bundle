@@ -103,6 +103,7 @@ class ModulePropertyReader extends Module
         $this->Template->name = $objProperty->name;
         $this->Template->address = $objProperty->address;
         $this->Template->teaser = $objProperty->teaser;
+        $this->Template->description_heading = $objProperty->description_heading;
         $this->Template->description = $objProperty->description;
         $this->Template->features = StringUtil::deserialize($objProperty->features);
     }
