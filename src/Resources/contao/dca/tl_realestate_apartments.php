@@ -73,7 +73,11 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             'sorting' => true,
             'flag' => 1,
             'inputType' => 'text',
-            'eval' => ['mandatory' => true, 'maxlength' => 6, 'tl_class' => 'w50'],
+            'eval' => [
+                'mandatory' => true,
+                'maxlength' => 6,
+                'tl_class' => 'w50'
+            ],
             'sql' => "varchar(6) NOT NULL default ''"
         ],
         'floor' => [
@@ -82,7 +86,11 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             'sorting' => true,
             'flag' => 1,
             'inputType' => 'text',
-            'eval' => ['mandatory' => true, 'maxlength' => 20, 'tl_class' => 'w50'],
+            'eval' => [
+                'mandatory' => true,
+                'maxlength' => 20,
+                'tl_class' => 'w50'
+            ],
             'sql' => "varchar(20) NOT NULL default ''"
         ],
         'roomcount' => [
@@ -91,14 +99,24 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             'sorting' => true,
             'flag' => 1,
             'inputType' => 'text',
-            'eval' => ['mandatory' => true, 'maxlength' => 3, 'tl_class' => 'w50', 'rgxp' => 'digit'],
+            'eval' => [
+                'mandatory' => true,
+                'maxlength' => 3,
+                'tl_class' => 'w50',
+                'rgxp' => 'digit'
+            ],
             'sql' => "varchar(3) NOT NULL default ''"
         ],
         'rooms' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['rooms'],
             'exclude' => true,
             'inputType' => 'tableWizard',
-            'eval' => array('allowHtml'=>true, 'doNotSaveEmpty'=>true, 'style'=>'width:142px;height:32px;', 'tl_class'=>'clr'),
+            'eval' => [
+                'allowHtml'=>true,
+                'doNotSaveEmpty'=>true,
+                'style'=>'width:142px;height:32px;',
+                'tl_class'=>'clr'
+            ],
             'sql' => "blob NULL"
         ],
         'area' => [
@@ -107,7 +125,11 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             'sorting' => true,
             'flag' => 1,
             'inputType' => 'text',
-            'eval' => ['mandatory' => true, 'maxlength' => 20, 'tl_class' => 'w50'],
+            'eval' => [
+                'mandatory' => true,
+                'maxlength' => 20,
+                'tl_class' => 'w50'
+            ],
             'sql' => "varchar(20) NOT NULL default ''"
         ],
         'availability' => [
@@ -115,14 +137,29 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             'search' => true,
             'sorting' => true,
             'flag' => 1,
-            'inputType' => 'text',
-            'eval' => ['mandatory' => true, 'maxlength' => 20, 'tl_class' => 'w50'],
+            'inputType' => 'select',
+            'options' => [
+                '',
+                'available',
+                'sold',
+                'reserved'
+            ],
+            'reference' => &$GLOBALS['TL_LANG']['tl_realestate_apartments'],
+            'eval' => [
+                'mandatory' => true,
+                'maxlength' => 20,
+                'tl_class' => 'w50 wizard'
+            ],
             'sql' => "varchar(20) NOT NULL default ''"
         ],
         'highlights' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['highlights'],
             'inputType' => 'textarea',
-            'eval' => ['mandatory' => true, 'rte' => 'tinyMCE', 'helpwizard' => true],
+            'eval' => [
+                'mandatory' => true,
+                'rte' => 'tinyMCE',
+                'helpwizard' => true
+            ],
             'sql' => "text NULL"
         ],
         'misc' => [
@@ -134,31 +171,49 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
         'description' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['description'],
             'inputType' => 'textarea',
-            'eval' => ['mandatory' => true, 'rte' => 'tinyMCE', 'helpwizard' => true],
+            'eval' => [
+                'mandatory' => true,
+                'rte' => 'tinyMCE',
+                'helpwizard' => true
+            ],
             'sql' => "text NULL"
         ],
         'features_apartment' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['features_apartment'],
             'inputType' => 'listWizard',
-            'eval' => ['maxlength' => 40, 'tl_class' => 'w50'],
+            'eval' => [
+                'maxlength' => 40,
+                'tl_class' => 'w50'
+            ],
             'sql' => "blob NULL"
         ],
         'features_object' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['features_object'],
             'inputType' => 'listWizard',
-            'eval' => ['maxlength' => 40, 'tl_class' => 'w50'],
+            'eval' => [
+                'maxlength' => 40,
+                'tl_class' => 'w50'
+            ],
             'sql' => "blob NULL"
         ],
         'features_infrastructure' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['features_infrastructure'],
             'inputType' => 'listWizard',
-            'eval' => ['maxlength' => 40, 'tl_class' => 'w50'],
+            'eval' => [
+                'maxlength' => 40,
+                'tl_class' => 'w50'
+            ],
             'sql' => "blob NULL"
         ],
         'image' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['image'],
             'inputType' => 'fileTree',
-            'eval' => ['fieldType'=>'radio', 'filesOnly'=>true, 'extensions'=>Contao\Config::get('validImageTypes'), 'tl_class' => 'clr w50'],
+            'eval' => [
+                'fieldType'=>'radio',
+                'filesOnly'=>true,
+                'extensions'=>Contao\Config::get('validImageTypes'),
+                'tl_class' => 'clr w50'
+            ],
             'sql' => "binary(16) NULL"
         ],
         'blueprints' => [

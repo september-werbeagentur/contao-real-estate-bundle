@@ -8,6 +8,14 @@
   justify-content: flex-start;
   column-gap: $column-gap;
 
+  &__link {
+    display: block;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   &__property {
     max-width: 400px;
     min-width: 300px;
@@ -38,12 +46,15 @@
   }
 
   &__features {
-    -webkit-column-count: 4;
-    -moz-column-count: 4;
     column-count: 4;
+    column-gap: 40px;
   }
 
   &__feature {
     break-inside: avoid;
   }
+}
+
+.clickable {
+  cursor: pointer;
 }

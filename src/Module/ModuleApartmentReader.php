@@ -65,7 +65,7 @@ class ModuleApartmentReader extends Module
 
         $objApartment = RealestateApartmentsModel::findByIdOrAlias(Input::get('items'));
 
-        $this->Template->back = $GLOBALS['TL_LANG']['MSC']['goBack'];
+        $this->Template->back = $GLOBALS['TL_LANG']['tl_realestate_apartments']['goBack'];
         $this->Template->referer = 'javascript:history.go(-1)';
 
         if (null !== ($objImage = \FilesModel::findByUuid($objApartment->image))) {
