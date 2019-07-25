@@ -51,7 +51,7 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
     ],
     'palettes' => [
         '__selector__' => [],
-        'default' => '{data_legend},number,floor,roomcount,rooms,misc,area,availability;{details_legend},description,highlights;{features_legend},features_apartment,features_object,features_infrastructure;{image_legend},image,blueprints',
+        'default' => '{data_legend},number,floor,roomcount,rooms,misc,area,availability;{details_legend},description,highlights;{features_legend},features_apartment,features_object,features_infrastructure;{image_legend},images,blueprints',
     ],
     // TODO add 'availability'
     'fields' => [
@@ -205,16 +205,17 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             ],
             'sql' => "blob NULL"
         ],
-        'image' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['image'],
+        'images' => [
+            'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['images'],
             'inputType' => 'fileTree',
             'eval' => [
-                'fieldType'=>'radio',
+                'fieldType'=>'checkbox',
                 'filesOnly'=>true,
                 'extensions'=>Contao\Config::get('validImageTypes'),
-                'tl_class' => 'clr w50'
+                'tl_class' => 'clr w50',
+                'multiple' => true,
             ],
-            'sql' => "binary(16) NULL"
+            'sql' => "blob NULL"
         ],
         'blueprints' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['blueprints'],

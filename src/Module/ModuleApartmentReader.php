@@ -68,18 +68,8 @@ class ModuleApartmentReader extends Module
         $this->Template->back = $GLOBALS['TL_LANG']['tl_realestate_apartments']['goBack'];
         $this->Template->referer = 'javascript:history.go(-1)';
 
-        if (null !== ($objImage = \FilesModel::findByUuid($objApartment->image))) {
-            $this->Template->imagePath = $objImage->path;
-        }
-        $arrBlueprints = StringUtil::deserialize($objApartment->blueprints);
-        $blueprintPaths = [];
-        foreach ($arrBlueprints as $blueprint) {
-            if (null !== ($objBlueprint = \FilesModel::findByUuid($blueprint))) {
-                 $blueprintPaths[] = $objBlueprint->path;
-            }
-        }
-
-        $this->Template->blueprintPaths = $blueprintPaths;
+        $this->Template->imagePaths = $this->getImages($objApartment->images);
+        $this->Template->blueprintPaths = $this->getImages($objApartment->blueprints);
 
         // Get address from the project
         $objObject = RealestateObjectsModel::findByPk($objApartment->pid);
@@ -99,5 +89,16 @@ class ModuleApartmentReader extends Module
         $this->Template->features_apartment = StringUtil::deserialize($objApartment->features_apartment);
         $this->Template->features_object = StringUtil::deserialize($objApartment->features_object);
         $this->Template->features_infrastructure = StringUtil::deserialize($objApartment->features_infrastructure);
+    }
+
+    protected function getImages($blob) {
+        $arrImages = StringUtil::deserialize($blob);
+        $imagePaths = [];
+        foreach ($arrImages as $imageId) {
+            if (null !== ($objImage = \FilesModel::findByUuid($imageId))) {
+                $imagePaths[] = $objImage->path;
+            }
+        }
+        return $imagePaths;
     }
 }
