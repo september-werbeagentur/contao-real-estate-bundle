@@ -87,6 +87,7 @@
 
   &__slides {
     width: 400%;
+    transition: transform 1s;
   }
 
   &__slide {
@@ -106,7 +107,6 @@
     &--active::before {
       transition: background-color 1s;
       background-color: rgba(255, 255, 255, 0);
-      visibility: hidden;
     }
   }
 }
