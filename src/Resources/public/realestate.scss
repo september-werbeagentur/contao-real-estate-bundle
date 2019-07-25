@@ -58,3 +58,55 @@
 .clickable {
   cursor: pointer;
 }
+
+.swa-image-slider {
+  &__display {
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+  }
+
+  &__control {
+    border: 40px solid #3f3f3f;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    position: absolute;
+    top: 150px;
+    z-index: 300;
+
+    &--previous {
+      border-left: none;
+      left: -90px;
+    }
+
+    &--next {
+      border-right: none;
+      right: -90px;
+    }
+  }
+
+  &__slides {
+    width: 400%;
+  }
+
+  &__slide {
+    float: left;
+    width: 25%;
+    position: relative;
+
+    &::before {
+      display: block;
+      content: '';
+      background-color: rgba(255, 255, 255, 0.6);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: background-color 1s;
+    }
+    &--active::before {
+      transition: background-color 1s;
+      background-color: rgba(255, 255, 255, 0);
+      visibility: hidden;
+    }
+  }
+}

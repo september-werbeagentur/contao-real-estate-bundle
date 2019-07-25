@@ -1,0 +1,19 @@
+<div class="swa-image-slider">
+    <div class="swa-image-slider__display">
+        <div class="swa-image-slider__control swa-image-slider__control--previous"></div>
+        <div class="swa-image-slider__control swa-image-slider__control--next"></div>
+        <div class="swa-image-slider__slides" style="width:<?= count($this->imagepaths) * 100;?>%" >
+            <?php
+                $position = 0;
+                foreach ($this->imagepaths as $imagepath) : ?>
+                    <div class="swa-image-slider__slide"
+                        src="<?= $imagepath; ?>"
+                        alt="Wohnung"
+                        data-position="<?= $position++; ?>"
+                        style="width: <?= 100/count($this->imagepaths); ?>%" >
+                        <img class="swa-image-slider__image" src="<?= $imagepath; ?>" alt="Wohnung">
+                    </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>

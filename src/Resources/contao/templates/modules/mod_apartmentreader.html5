@@ -68,6 +68,10 @@
     </div>
 
     <article class="swa-apartment-reader__description"><?= $this->description; ?></article>
+
+    <article class="swa-apartment-reader__images">
+        <?php $this->insert('mod_imageslider', array('imagepaths' => $this->imagePaths)); ?>
+    </article>
 </div>
 <?php $this->endblock(); ?>
 
