@@ -133,7 +133,7 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             'sql' => "varchar(20) NOT NULL default ''"
         ],
         'availability' => [
-            'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['availabity'],
+            'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['availability'],
             'search' => true,
             'sorting' => true,
             'flag' => 1,
