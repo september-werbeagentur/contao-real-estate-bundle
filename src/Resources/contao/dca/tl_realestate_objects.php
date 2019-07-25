@@ -79,13 +79,20 @@ $GLOBALS['TL_DCA']['tl_realestate_objects'] = [
             'sorting' => true,
             'flag' => 1,
             'inputType' => 'text',
-            'eval' => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
+            'eval' => [
+                'mandatory' => true,
+                'maxlength' => 255,
+                'tl_class' => 'w50'
+            ],
             'sql' => "varchar(255) NOT NULL default ''"
         ],
         'description' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_objects']['description'],
             'inputType' => 'textarea',
-            'eval' => ['rte' => 'tinyMCE', 'helpwizard' => true],
+            'eval' => [
+                'rte' => 'tinyMCE',
+                'helpwizard' => true
+            ],
             'sql' => "text NULL"
         ],
     ]

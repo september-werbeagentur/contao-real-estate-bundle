@@ -73,7 +73,11 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
             'sorting' => true,
             'flag' => 1,
             'inputType' => 'text',
-            'eval' => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'w50'],
+            'eval' => [
+                'mandatory' => true,
+                'maxlength' => 255,
+                'tl_class' => 'w50'
+            ],
             'sql' => "varchar(255) NOT NULL default ''"
         ],
         'address' => [
@@ -82,7 +86,10 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
             'sorting' => true,
             'flag' => 1,
             'inputType' => 'text',
-            'eval' => ['maxlength' => 255, 'tl_class' => 'w50'],
+            'eval' => [
+                'maxlength' => 255,
+                'tl_class' => 'w50'
+            ],
             'sql' => "varchar(255) NOT NULL default ''"
         ],
         'teaser' => [
@@ -97,33 +104,54 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
             'sorting' => true,
             'flag' => 1,
             'inputType' => 'text',
-            'eval' => ['mandatory' => true, 'maxlength' => 255, 'tl_class' => 'clr'],
+            'eval' => [
+                'mandatory' => true,
+                'maxlength' => 255,
+                'tl_class' => 'clr'
+            ],
             'sql' => "varchar(255) NOT NULL default ''"
         ],
         'description' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate']['description'],
             'inputType' => 'textarea',
-            'eval' => ['mandatory' => true, 'rte' => 'tinyMCE', 'helpwizard' => true],
+            'eval' => [
+                'mandatory' => true,
+                'rte' => 'tinyMCE',
+                'helpwizard' => true
+            ],
             'sql' => "text NULL"
         ],
         'features' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate']['features'],
             'inputType' => 'listWizard',
-            'eval' => ['maxlength' => 40, 'tl_class' => 'w50'],
+            'eval' => [
+                'maxlength' => 40,
+                'tl_class' => 'w50'
+            ],
             'sql' => "blob NULL"
         ],
         'logo' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate']['logo'],
             'exclude' => true,
             'inputType' => 'fileTree',
-            'eval' => ['fieldType'=>'radio', 'filesOnly'=>true, 'extensions'=>Contao\Config::get('validImageTypes'), 'tl_class' => 'w50'],
+            'eval' => [
+                'fieldType'=>'radio',
+                'filesOnly'=>true,
+                'extensions'=>Contao\Config::get('validImageTypes'),
+                'tl_class' => 'w50'
+            ],
             'sql' => "binary(16) NULL"
         ],
         'image' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate']['image'],
             'exclude' => true,
             'inputType' => 'fileTree',
-            'eval' => ['fieldType'=>'radio', 'filesOnly'=>true, 'extensions'=>Contao\Config::get('validImageTypes'), 'tl_class' => 'w50'],
+            'eval' => [
+                'fieldType'=>'radio',
+                'filesOnly'=>true,
+                'extensions'=>Contao\Config::get('validImageTypes'),
+                'tl_class' => 'w50'
+            ],
             'sql' => "binary(16) NULL"
         ],
     ]
