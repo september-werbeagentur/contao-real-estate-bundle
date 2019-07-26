@@ -67,22 +67,60 @@
   }
 
   &__control {
-    border: 40px solid #3f3f3f;
+    border: 60px solid #3f3f3f;
     border-bottom-color: transparent;
     border-top-color: transparent;
     position: absolute;
     top: 150px;
     z-index: 300;
+    transition: all .25s;
+    cursor: pointer;
+
+    &:hover {
+      border-color: transparent #5f5f5f;
+    }
+
+    &::after {
+      border: solid white;
+      border-width: 4px 4px 0 0;
+      content: '';
+      width: 40px;
+      height: 40px;
+      display: block;
+      transform: rotate3d(0, 0, 1, 45deg);
+      position: absolute;
+      top: -20px;
+      transition: all .25s;
+    }
 
     &--previous {
       border-left: none;
-      left: -90px;
+      left: -63px;
+
+      &::after {
+        transform: rotate3d(0, 0, 1, 45deg);
+        border-width: 0 0 4px 4px;
+        left: 22px;
+      }
+
+      &:hover::after {
+        left: 30px;
+      }
     }
 
     &--next {
       border-right: none;
-      right: -90px;
+      right: -63px;
+
+      &::after {
+        right: 22px;
+      }
+
+      &:hover::after {
+        right: 30px;
+      }
     }
+
   }
 
   &__slides {
@@ -94,6 +132,7 @@
     float: left;
     width: 25%;
     position: relative;
+    padding: 0 2px;
 
     &::before {
       display: block;
@@ -104,6 +143,7 @@
       position: absolute;
       transition: background-color 1s;
     }
+
     &--active::before {
       transition: background-color 1s;
       background-color: rgba(255, 255, 255, 0);
