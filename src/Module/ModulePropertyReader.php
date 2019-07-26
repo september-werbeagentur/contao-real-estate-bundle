@@ -76,6 +76,8 @@ class ModulePropertyReader extends Module
             $this->Template->logoPath = $objImage->path;
         }
 
+        $this->Template->sliderImagePaths = $this->getImages($objProperty->slider_images);
+
         $objObjects = RealestateObjectsModel::findAllByPid($objProperty->id);
         if ($objObjects !== null) {
             $arrTemp = array();
@@ -106,5 +108,16 @@ class ModulePropertyReader extends Module
         $this->Template->description_heading = $objProperty->description_heading;
         $this->Template->description = $objProperty->description;
         $this->Template->features = StringUtil::deserialize($objProperty->features);
+    }
+
+    protected function getImages($blob) {
+        $arrImages = StringUtil::deserialize($blob);
+        $imagePaths = [];
+        foreach ($arrImages as $imageId) {
+            if (null !== ($objImage = \FilesModel::findByUuid($imageId))) {
+                $imagePaths[] = $objImage->path;
+            }
+        }
+        return $imagePaths;
     }
 }
