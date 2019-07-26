@@ -25,7 +25,7 @@ function setCurrentSliderPosition(position) {
 
 function getSlideDistance() {
     const slider = document.getElementById("swa-image-slider");
-    return parseInt(slider.dataset.distance);
+    return parseFloat(slider.dataset.distance);
 }
 
 function getSlideCount() {
