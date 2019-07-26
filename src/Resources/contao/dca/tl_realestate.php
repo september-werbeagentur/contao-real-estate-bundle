@@ -58,7 +58,7 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
     ],
     'palettes' => [
         '__selector__' => [],
-        'default' => '{header_legend},name,address,logo,image;{details_legend},teaser,description_heading,description,features',
+        'default' => '{header_legend},name,address,logo,image;{details_legend},teaser,description_heading,description,slider_images,features',
     ],
     'fields' => [
         'id' => [
@@ -154,5 +154,17 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
             ],
             'sql' => "binary(16) NULL"
         ],
+        'slider_images' => [
+            'label' => &$GLOBALS['TL_LANG']['tl_realestate']['slider_images'],
+            'inputType' => 'fileTree',
+            'eval' => [
+                'fieldType'=>'checkbox',
+                'filesOnly'=>true,
+                'extensions'=>Contao\Config::get('validImageTypes'),
+                'tl_class' => 'clr w50',
+                'multiple' => true,
+            ],
+            'sql' => "blob NULL"
+        ]
     ]
 ];

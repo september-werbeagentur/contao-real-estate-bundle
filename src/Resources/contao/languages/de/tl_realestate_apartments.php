@@ -40,8 +40,8 @@ $GLOBALS['TL_LANG']['tl_realestate_apartments']['features'][0] = 'Besonderheiten
 $GLOBALS['TL_LANG']['tl_realestate_apartments']['features'][1] = 'Listen Sie hier die wichtigsten Besonderheiten als Stichpunkte auf.';
 $GLOBALS['TL_LANG']['tl_realestate_apartments']['blueprints'][0] = 'Grundrisse';
 $GLOBALS['TL_LANG']['tl_realestate_apartments']['blueprints'][1] = 'Geben Sie einen oder mehrere Grundrisse an.';
-$GLOBALS['TL_LANG']['tl_realestate_apartments']['image'][0] = 'Bild';
-$GLOBALS['TL_LANG']['tl_realestate_apartments']['image'][1] = 'Wählen Sie ein Bild für das Projekt aus.';
+$GLOBALS['TL_LANG']['tl_realestate_apartments']['images'][0] = 'Bilder';
+$GLOBALS['TL_LANG']['tl_realestate_apartments']['images'][1] = 'Wählen Sie die Bilder für das Projekt aus.';
 
 $GLOBALS['TL_LANG']['tl_realestate_apartments']['features_apartment'][0] = 'Die Wohnung';
 $GLOBALS['TL_LANG']['tl_realestate_apartments']['features_object'][0] = 'Die Wohnanlage';

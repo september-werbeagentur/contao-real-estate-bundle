@@ -29,3 +29,5 @@ $GLOBALS['TL_LANG']['tl_realestate']['logo'][0] = 'Logo';
 $GLOBALS['TL_LANG']['tl_realestate']['logo'][1] = 'Wählen Sie ein Logo für das Projekt aus.';
 $GLOBALS['TL_LANG']['tl_realestate']['image'][0] = 'Bild';
 $GLOBALS['TL_LANG']['tl_realestate']['image'][1] = 'Wählen Sie ein Bild für das Projekt aus.';
+$GLOBALS['TL_LANG']['tl_realestate']['slider_images'][0] = 'Sliderbilder';
+$GLOBALS['TL_LANG']['tl_realestate']['slider_images'][1] = 'Wählen Sie die Bilder für den Slider aus.';

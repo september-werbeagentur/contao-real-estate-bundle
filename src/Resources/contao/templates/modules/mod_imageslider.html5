@@ -1,0 +1,22 @@
+<div id="swa-image-slider"
+    class="swa-image-slider"
+    data-count="<?= count($this->imagepaths); ?>"
+    data-position="<?= (count($this->imagepaths) > 1 ) ? "1" : "0"; ?>"
+    data-distance="<?= 100/count($this->imagepaths); ?>"
+>
+    <div id="swa-image-slider__display" class="swa-image-slider__display">
+        <div id="swa-image-slider__control--previous" class="swa-image-slider__control swa-image-slider__control--previous"></div>
+        <div id="swa-image-slider__control--next" class="swa-image-slider__control swa-image-slider__control--next"></div>
+        <div id="swa-image-slider__slides" class="swa-image-slider__slides" style="width:<?= count($this->imagepaths) * 100;?>%" >
+            <?php
+                foreach ($this->imagepaths as $imagepath) : ?>
+                    <div class="swa-image-slider__slide"
+                        src="<?= $imagepath; ?>"
+                        alt="Wohnung"
+                        style="width: <?= 100/count($this->imagepaths); ?>%" >
+                        <img class="swa-image-slider__image" src="<?= $imagepath; ?>" alt="Wohnung">
+                    </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
