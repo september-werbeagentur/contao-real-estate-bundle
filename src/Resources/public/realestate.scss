@@ -71,7 +71,7 @@
     border-bottom-color: transparent;
     border-top-color: transparent;
     position: absolute;
-    top: 150px;
+    top: calc(50% - 60px);
     z-index: 300;
     transition: all .25s;
     cursor: pointer;
@@ -126,10 +126,11 @@
   &__slides {
     width: 400%;
     transition: transform 1s;
+    display: flex;
+    align-items: center;
   }
 
   &__slide {
-    float: left;
     width: 25%;
     position: relative;
     padding: 0 2px;
