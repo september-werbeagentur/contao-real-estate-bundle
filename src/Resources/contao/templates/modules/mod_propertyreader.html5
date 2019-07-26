@@ -13,9 +13,11 @@
             <?= $this->description; ?>
         </div>
     </article>
-    <div class="swa-property-reader__slider">
-        <?php $this->insert('mod_imageslider', array('imagepaths' => $this->sliderImagePaths)); ?>
-    </div>
+    <?php if (count($this->sliderImagePaths) > 0) : ?>
+        <div class="swa-property-reader__slider">
+            <?php $this->insert('mod_imageslider', array('imagepaths' => $this->sliderImagePaths)); ?>
+        </div>
+    <?php endif; ?>
     <h2>Ausstattungsdetails</h2>
     <ul class="swa-property-reader__features">
         <?php foreach ($this->features as $feature) : ?>

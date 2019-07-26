@@ -69,9 +69,11 @@
 
     <article class="swa-apartment-reader__description"><?= $this->description; ?></article>
 
-    <article class="swa-apartment-reader__images">
-        <?php $this->insert('mod_imageslider', array('imagepaths' => $this->imagePaths)); ?>
-    </article>
+    <?php if (count($this->imagePaths) > 0) : ?>
+        <article class="swa-apartment-reader__images">
+            <?php $this->insert('mod_imageslider', array('imagepaths' => $this->imagePaths)); ?>
+        </article>
+    <?php endif; ?>
 </div>
 <?php $this->endblock(); ?>
 
