@@ -19,8 +19,8 @@ array_insert($GLOBALS['FE_MOD'], 3, [
     ]
 ]);
 
-$GLOBALS['TL_CSS'][] = 'bundles/contaorealestate/realestate.css|static';
-$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/contaorealestate/slider.js|static';
+$GLOBALS['TL_CSS'][] = 'bundles/contaorealestate/lib/realestate.css|static';
+$GLOBALS['TL_JAVASCRIPT'][] = 'bundles/contaorealestate/lib/slider.js|static';
 
 $GLOBALS['TL_MODELS']['tl_realestate'] = 'SeptemberWerbeagentur\ContaoRealEstateBundle\Model\RealestateModel';
 $GLOBALS['TL_MODELS']['tl_realestate_objects'] = 'SeptemberWerbeagentur\ContaoRealEstateBundle\Model\RealestateObjectsModel';

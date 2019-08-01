@@ -1,0 +1,34 @@
+{
+  "name": "contao-real-estate-bundle",
+  "license": "MIT",
+  "scripts": {
+    "build": "node_modules/.bin/babel src/Resources/public --out-dir src/Resources/public/lib; node_modules/.bin/sass --no-source-map --style=compressed src/Resources/public/:src/Resources/public/lib;"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "ie": "11"
+          },
+          "corejs": {
+            "version": "3",
+            "proposals": "true"
+          }
+        }
+      ],
+      ["minify"]
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-preset-minify": "^0.5.0",
+    "sass": "^1.22.9"
+  },
+  "dependencies": {
+    "core-js": "^3.1.4"
+  }
+}
