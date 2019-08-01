@@ -126,8 +126,8 @@ class ModulePropertyReader extends Module
     protected static function sortByName($a, $b) {
         if (strcmp($a['name'], $b['name']) === 0) return 0;
         $compare = [$a['name'], $b['name']];
-        natsort($compare);
-        return (strcmp($compare[0], $a['name']) === 0) ? 1 : -1;
+        sort($compare, SORT_NATURAL);
+        return (strcmp($compare[0], $a['name']) === 0) ? -1 : 1;
     }
 
     protected static function sortByNumber($a, $b) {
