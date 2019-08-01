@@ -97,9 +97,11 @@ class ModulePropertyReader extends Module
                         }
                         $arrTempApartments[$apartment->id]['blueprint_paths'] = $blueprintPaths;
                     }
+                    usort($arrTempApartments, 'self::sortByNumber');
                     $arrTemp[$object->id]['apartments'] = $arrTempApartments;
                 }
             }
+            usort($arrTemp, 'self::sortByName');
             $this->Template->objects = $arrTemp;
         }
         $this->Template->name = $objProperty->name;
@@ -119,5 +121,19 @@ class ModulePropertyReader extends Module
             }
         }
         return $imagePaths;
+    }
+
+    protected static function sortByName($a, $b) {
+        if (strcmp($a['name'], $b['name']) === 0) return 0;
+        $compare = [$a['name'], $b['name']];
+        natsort($compare);
+        return (strcmp($compare[0], $a['name']) === 0) ? 1 : -1;
+    }
+
+    protected static function sortByNumber($a, $b) {
+        $intA = intval($a['number']);
+        $intB = intval($b['number']);
+        if ($intA == $intB) return 0;
+        return ($intA < $intB) ? -1 : 1;
     }
 }
