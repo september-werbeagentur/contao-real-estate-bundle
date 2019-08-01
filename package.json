@@ -2,7 +2,7 @@
   "name": "contao-real-estate-bundle",
   "license": "MIT",
   "scripts": {
-    "build": "node_modules/.bin/babel src/Resources/public --out-dir src/Resources/public/lib; node_modules/.bin/sass --no-source-map --style=compressed src/Resources/public/:src/Resources/public/lib;"
+    "build": "node_modules/.bin/babel src/Resources/public/js --out-dir src/Resources/public/lib; node_modules/.bin/sass --no-source-map --style=compressed src/Resources/public/scss/:src/Resources/public/lib;"
   },
   "babel": {
     "presets": [

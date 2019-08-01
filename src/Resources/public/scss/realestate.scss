@@ -97,7 +97,7 @@ $timing-bezier: cubic-bezier(.66, .06, .4, .98);
 
     &--previous {
       border-left: none;
-      left: -63px;
+      left: -62px;
 
       &::after {
         transform: rotate3d(0, 0, 1, 45deg);
@@ -112,7 +112,7 @@ $timing-bezier: cubic-bezier(.66, .06, .4, .98);
 
     &--next {
       border-right: none;
-      right: -63px;
+      right: -62px;
 
       &::after {
         right: 22px;
