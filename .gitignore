@@ -8,5 +8,8 @@
 # PhpUnit
 /phpunit.xml
 
+# Node
+node_modules/
+
 # Project files
 src/Resources/public/realestate.css.map

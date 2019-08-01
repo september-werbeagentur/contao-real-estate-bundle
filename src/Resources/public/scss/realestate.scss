@@ -1,3 +1,5 @@
+$timing-bezier: cubic-bezier(.66, .06, .4, .98);
+
 .swa-property-list {
   $column-gap: 20px;
   display: flex;
@@ -95,7 +97,7 @@
 
     &--previous {
       border-left: none;
-      left: -63px;
+      left: -62px;
 
       &::after {
         transform: rotate3d(0, 0, 1, 45deg);
@@ -110,7 +112,7 @@
 
     &--next {
       border-right: none;
-      right: -63px;
+      right: -62px;
 
       &::after {
         right: 22px;
@@ -125,7 +127,7 @@
 
   &__slides {
     width: 400%;
-    transition: transform 1s;
+    transition: transform .5s $timing-bezier;
     display: flex;
     align-items: center;
   }
@@ -142,11 +144,12 @@
       width: 100%;
       height: 100%;
       position: absolute;
-      transition: background-color 1s;
+      top: 0;
+      left: 0;
+      transition: background-color .5s $timing-bezier;
     }
 
     &--active::before {
-      transition: background-color 1s;
       background-color: rgba(255, 255, 255, 0);
     }
   }
