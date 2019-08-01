@@ -1,3 +1,5 @@
+$timing-bezier: cubic-bezier(.66, .06, .4, .98);
+
 .swa-property-list {
   $column-gap: 20px;
   display: flex;
@@ -125,7 +127,7 @@
 
   &__slides {
     width: 400%;
-    transition: transform 1s;
+    transition: transform .5s $timing-bezier;
     display: flex;
     align-items: center;
   }
@@ -144,11 +146,10 @@
       position: absolute;
       top: 0;
       left: 0;
-      transition: background-color 1s;
+      transition: background-color .5s $timing-bezier;
     }
 
     &--active::before {
-      transition: background-color 1s;
       background-color: rgba(255, 255, 255, 0);
     }
   }
