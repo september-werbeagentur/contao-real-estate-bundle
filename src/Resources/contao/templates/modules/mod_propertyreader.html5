@@ -5,7 +5,9 @@
     <h1 class="swa-property-reader__title"><?= $this->name; ?></h1>
     <p class="swa-property-reader__address"><?= $this->address; ?></p>
     <?php //TODO make alt text maintainable in backend ?>
-    <img class="swa-property-reader__logo" src="<?= $this->logoPath; ?>" alt="logo">
+    <?php if ($this->logoPath): ?>
+        <img class="swa-property-reader__logo" src="<?= $this->logoPath; ?>" alt="logo">
+    <?php endif; ?>
     <img class="swa-property-reader__image" src="<?= $this->imagePath; ?>" alt="Project image">
     <article class="swa-property-reader__description">
         <h3 class="swa-property-reader__description-heading"><?= $this->description_heading; ?></h3>
