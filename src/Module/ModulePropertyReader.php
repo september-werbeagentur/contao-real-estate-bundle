@@ -75,6 +75,7 @@ class ModulePropertyReader extends Module
         if (null !== ($objImage = \FilesModel::findByUuid($objProperty->logo))) {
             $this->Template->logoPath = $objImage->path;
         }
+        $this->Template->ddd_view = $objProperty->ddd_view;
 
         $this->Template->sliderImagePaths = $this->getImages($objProperty->slider_images);
 

@@ -31,3 +31,5 @@ $GLOBALS['TL_LANG']['tl_realestate']['image'][0] = 'Bild';
 $GLOBALS['TL_LANG']['tl_realestate']['image'][1] = 'Wählen Sie ein Bild für das Projekt aus.';
 $GLOBALS['TL_LANG']['tl_realestate']['slider_images'][0] = 'Sliderbilder';
 $GLOBALS['TL_LANG']['tl_realestate']['slider_images'][1] = 'Wählen Sie die Bilder für den Slider aus.';
+$GLOBALS['TL_LANG']['tl_realestate']['ddd_view'][0] = '3D-Rundgang';
+$GLOBALS['TL_LANG']['tl_realestate']['ddd_view'][1] = 'Wählen Sie eine Seite aus, die als 3D-Rundgang verlinkt werden soll.';

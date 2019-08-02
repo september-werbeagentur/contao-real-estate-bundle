@@ -2,10 +2,21 @@
 
 <?php $this->block('content'); ?>
 <div class="swa-property-reader">
-    <h1 class="swa-property-reader__title"><?= $this->name; ?></h1>
-    <p class="swa-property-reader__address"><?= $this->address; ?></p>
+    <div class="swa-property-reader__header">
+        <div class="swa-property-reader__title-wrapper">
+            <h1 class="swa-property-reader__title"><?= $this->name; ?></h1>
+            <p class="swa-property-reader__address"><?= $this->address; ?></p>
+        </div>
+        <?php if ($this->ddd_view): ?>
+            <a href="<?= $this->ddd_view ?>" class="swa-property-reader__3d-link" title="3D-Rundgang öffnen" target="_blank">
+                <img class="swa-property-reader__3d-icon" src="/bundles/contaorealestate/img/3d-icon.svg" alt="3D-Rundgang">
+            </a>
+        <?php endif; ?>
+    </div>
     <?php //TODO make alt text maintainable in backend ?>
-    <img class="swa-property-reader__logo" src="<?= $this->logoPath; ?>" alt="logo">
+    <?php if ($this->logoPath): ?>
+        <img class="swa-property-reader__logo" src="<?= $this->logoPath; ?>" alt="logo">
+    <?php endif; ?>
     <img class="swa-property-reader__image" src="<?= $this->imagePath; ?>" alt="Project image">
     <article class="swa-property-reader__description">
         <h3 class="swa-property-reader__description-heading"><?= $this->description_heading; ?></h3>
