@@ -16,6 +16,9 @@
                     $this->insert('image', (array)$objImageTemplate);
                 }
                 ?>
+                <?php if ($property->banner) : ?>
+                    <aside class="swa-property-list__overlay"><?= $property->banner; ?></aside>
+                <?php endif; ?>
                 <h1 class="swa-property-list__property-name"><?= $property->name; ?></h1>
                 <div class="swa-property-list__property-teaser"><?= $property->teaser; ?></div>
             </a>
