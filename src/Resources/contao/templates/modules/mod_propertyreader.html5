@@ -7,11 +7,7 @@
             <h1 class="swa-property-reader__title"><?= $this->name; ?></h1>
             <p class="swa-property-reader__address"><?= $this->address; ?></p>
         </div>
-        <?php if ($this->ddd_view): ?>
-            <a href="<?= $this->ddd_view ?>" class="swa-property-reader__3d-link" title="3D-Rundgang öffnen" target="_blank">
-                <img class="swa-property-reader__3d-icon" src="/bundles/contaorealestate/img/3d-icon.svg" alt="3D-Rundgang">
-            </a>
-        <?php endif; ?>
+
     </div>
     <?php //TODO make alt text maintainable in backend ?>
     <?php if ($this->logoPath): ?>
@@ -24,6 +20,9 @@
             <?= $this->description; ?>
         </div>
     </article>
+    <?php if ($this->ddd_view): ?>
+        <iframe width="100%" height="400" class="swa-property-reader__3d-view" src="<?= $this->ddd_view; ?>"></iframe>
+    <?php endif; ?>
     <?php if (count($this->sliderImagePaths) > 0) : ?>
         <div class="swa-property-reader__slider">
             <?php $this->insert('mod_imageslider', array('imagepaths' => $this->sliderImagePaths)); ?>

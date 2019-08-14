@@ -32,6 +32,6 @@ $GLOBALS['TL_LANG']['tl_realestate']['image'][1] = 'Wählen Sie ein Bild für da
 $GLOBALS['TL_LANG']['tl_realestate']['slider_images'][0] = 'Sliderbilder';
 $GLOBALS['TL_LANG']['tl_realestate']['slider_images'][1] = 'Wählen Sie die Bilder für den Slider aus.';
 $GLOBALS['TL_LANG']['tl_realestate']['ddd_view'][0] = '3D-Rundgang';
-$GLOBALS['TL_LANG']['tl_realestate']['ddd_view'][1] = 'Wählen Sie eine Seite aus, die als 3D-Rundgang verlinkt werden soll.';
+$GLOBALS['TL_LANG']['tl_realestate']['ddd_view'][1] = 'Geben Sie hier den Pfad zum 3D Rundgang an.';
 $GLOBALS['TL_LANG']['tl_realestate']['banner'][0] = 'Overlay Banner';
 $GLOBALS['TL_LANG']['tl_realestate']['banner'][1] = 'z.B. "bereits 50% verkauft"';
