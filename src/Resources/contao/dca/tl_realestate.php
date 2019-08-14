@@ -58,7 +58,7 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
     ],
     'palettes' => [
         '__selector__' => [],
-        'default' => '{header_legend},name,address,logo,image,ddd_view;{details_legend},teaser,description_heading,description,slider_images,features',
+        'default' => '{header_legend},name,address,logo,image,ddd_view;{details_legend},banner,teaser,description_heading,description,slider_images,features',
     ],
     'fields' => [
         'id' => [
@@ -95,7 +95,7 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
         'teaser' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate']['teaser'],
             'inputType' => 'textarea',
-            'eval' => ['mandatory' => true, 'rte' => 'tinyMCE', 'helpwizard' => true],
+            'eval' => ['mandatory' => true, 'rte' => 'tinyMCE', 'helpwizard' => true, 'tl_class' => 'clr'],
             'sql' => "text NULL"
         ],
         'description_heading' => [
@@ -178,6 +178,15 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
                 'tl_class' => 'w50 wizard',
             ],
             'sql' => "varchar(255) NOT NULL default ''"
-        ]
+        ],
+        'banner' => [
+            'label' => &$GLOBALS['TL_LANG']['tl_realestate']['banner'],
+            'inputType' => 'text',
+            'eval' => [
+                'maxlength' => 30,
+                'tl_class' => 'w50'
+            ],
+            'sql' => "varchar(30) NOT NULL default ''"
+        ],
     ]
 ];
