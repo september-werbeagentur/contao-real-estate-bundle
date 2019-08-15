@@ -20,9 +20,6 @@
             <?= $this->description; ?>
         </div>
     </article>
-    <?php if ($this->ddd_view): ?>
-        <iframe width="100%" height="400" class="swa-property-reader__3d-view" src="<?= $this->ddd_view; ?>"></iframe>
-    <?php endif; ?>
     <?php if (count($this->sliderImagePaths) > 0) : ?>
         <div class="swa-property-reader__slider">
             <?php $this->insert('mod_imageslider', array('imagepaths' => $this->sliderImagePaths)); ?>
@@ -34,6 +31,9 @@
             <li class="swa-property-reader__feature"><?= $feature; ?></li>
         <?php endforeach; ?>
     </ul>
+    <?php if ($this->ddd_view): ?>
+        <iframe width="100%" height="400" class="swa-property-reader__3d-view" src="<?= $this->ddd_view; ?>"></iframe>
+    <?php endif; ?>
     <?php $this->insert('mod_objectlist', array('objects' => $this->objects, 'jumpTo' => $this->jumpTo)); ?>
 </div>
 <?php $this->endblock(); ?>
