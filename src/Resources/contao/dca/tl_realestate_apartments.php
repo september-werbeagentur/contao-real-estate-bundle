@@ -75,10 +75,10 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             'inputType' => 'text',
             'eval' => [
                 'mandatory' => true,
-                'maxlength' => 6,
+                'maxlength' => 20,
                 'tl_class' => 'w50'
             ],
-            'sql' => "varchar(6) NOT NULL default ''"
+            'sql' => "varchar(20) NOT NULL default ''"
         ],
         'floor' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['floor'],
@@ -88,10 +88,10 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             'inputType' => 'text',
             'eval' => [
                 'mandatory' => true,
-                'maxlength' => 20,
+                'maxlength' => 50,
                 'tl_class' => 'w50'
             ],
-            'sql' => "varchar(20) NOT NULL default ''"
+            'sql' => "varchar(50) NOT NULL default ''"
         ],
         'roomcount' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['roomcount'],
@@ -182,7 +182,7 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['features_apartment'],
             'inputType' => 'listWizard',
             'eval' => [
-                'maxlength' => 40,
+                'maxlength' => 60,
                 'tl_class' => 'w50'
             ],
             'sql' => "blob NULL"
@@ -191,7 +191,7 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['features_object'],
             'inputType' => 'listWizard',
             'eval' => [
-                'maxlength' => 40,
+                'maxlength' => 60,
                 'tl_class' => 'w50'
             ],
             'sql' => "blob NULL"
@@ -200,7 +200,7 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['features_infrastructure'],
             'inputType' => 'listWizard',
             'eval' => [
-                'maxlength' => 40,
+                'maxlength' => 60,
                 'tl_class' => 'w50'
             ],
             'sql' => "blob NULL"
