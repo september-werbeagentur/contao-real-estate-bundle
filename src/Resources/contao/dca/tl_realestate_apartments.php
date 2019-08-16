@@ -166,7 +166,7 @@ $GLOBALS['TL_DCA']['tl_realestate_apartments'] = [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['misc'],
             'inputType' => 'text',
             'eval' => ['mandatory' => true],
-            'sql' => "varchar(50) NULL"
+            'sql' => "varchar(70) NULL"
         ],
         'description' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate_apartments']['description'],
