@@ -58,7 +58,7 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
     ],
     'palettes' => [
         '__selector__' => [],
-        'default' => '{header_legend},name,address,logo,image,pdf_path,ddd_view;{details_legend},banner,teaser,description_heading,description,slider_images,features',
+        'default' => '{header_legend},name,address,logo,image,pdf_path,ddd_view,ddd_view_link;{details_legend},banner,teaser,description_heading,description,slider_images,features',
     ],
     'fields' => [
         'id' => [
@@ -172,7 +172,18 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
             'inputType' => 'text',
             'eval' => [
                 'rgxp' => 'url',
-                'decodeEntities' => false,
+                'maxlength' => 255,
+                'dcaPicker' => true,
+                'tl_class' => 'w50 wizard',
+            ],
+            'sql' => "varchar(255) NOT NULL default ''"
+        ],
+        'ddd_view_link' => [
+            'label' => &$GLOBALS['TL_LANG']['tl_realestate']['ddd_view_link'],
+            'exclude' => true,
+            'inputType' => 'text',
+            'eval' => [
+                'rgxp' => 'url',
                 'maxlength' => 255,
                 'dcaPicker' => true,
                 'tl_class' => 'w50 wizard',
