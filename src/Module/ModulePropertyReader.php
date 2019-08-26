@@ -76,6 +76,7 @@ class ModulePropertyReader extends Module
             $this->Template->logoPath = $objImage->path;
         }
         $this->Template->ddd_view = $objProperty->ddd_view;
+        $this->Template->ddd_view_link = $objProperty->ddd_view_link;
 
         $this->Template->sliderImagePaths = $this->getImages($objProperty->slider_images);
 

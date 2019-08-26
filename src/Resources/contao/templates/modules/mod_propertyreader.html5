@@ -34,6 +34,11 @@
     <?php if ($this->ddd_view): ?>
         <iframe width="100%" height="400" class="swa-property-reader__3d-view" src="<?= $this->ddd_view; ?>"></iframe>
     <?php endif; ?>
+    <?php if ($this->ddd_view_link): ?>
+        <a href="<?= $this->ddd_view_link ?>" class="swa-property-reader__3d-link" title="3D-Rundgang öffnen" target="_blank">
+            Vollbild Ansicht
+        </a>
+    <?php endif; ?>
     <?php $this->insert('mod_objectlist', array('objects' => $this->objects, 'jumpTo' => $this->jumpTo)); ?>
 </div>
 <?php $this->endblock(); ?>
