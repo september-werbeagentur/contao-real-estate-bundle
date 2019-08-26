@@ -43,12 +43,10 @@ $timing-bezier: cubic-bezier(.66, .06, .4, .98);
   }
 
   &__3d-link {
-    width: 4em;
-    height: 4em;
+    display: block;
+    margin: auto;
+    text-align: center;
     padding: .75em;
-    border-radius: 4em;
-    transition: background-color .25s ease-in-out;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
     &:hover {
       background-color: rgba(#000, .1);
@@ -56,12 +54,6 @@ $timing-bezier: cubic-bezier(.66, .06, .4, .98);
 
     &:active {
       background-color: rgba(#000, .2);
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
     }
   }
 
