@@ -42,6 +42,10 @@ $timing-bezier: cubic-bezier(.66, .06, .4, .98);
     align-items: center;
   }
 
+  &__3d-view {
+    margin-top: 1.5em;
+  }
+
   &__3d-link {
     display: block;
     margin: auto;
