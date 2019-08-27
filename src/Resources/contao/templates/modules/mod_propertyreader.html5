@@ -32,6 +32,7 @@
         <?php endforeach; ?>
     </ul>
     <?php if ($this->ddd_view): ?>
+        <h2>3D-Rundgang</h2>
         <iframe width="100%" height="400" class="swa-property-reader__3d-view" src="<?= $this->ddd_view; ?>"></iframe>
     <?php endif; ?>
     <?php if ($this->ddd_view_link): ?>
