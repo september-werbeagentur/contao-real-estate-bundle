@@ -1,5 +1,8 @@
 # Contao Real Estate Bundle
 
+![Packagist Version](https://img.shields.io/packagist/v/september-werbeagentur/contao-real-estate-bundle)
+
+
 This bundle helps managing real estate. 
 
 ## Testing this bundle
