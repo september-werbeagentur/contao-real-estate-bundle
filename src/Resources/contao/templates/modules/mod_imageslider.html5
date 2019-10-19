@@ -15,7 +15,7 @@
                         src="<?= $imagepath; ?>"
                         alt="Wohnung"
                         style="width: <?= 100/count($this->imagepaths); ?>%" >
-                        <a <?php echo (sizeof($this->imagelinks) > $image_id ? 'href="'.$this->imagelinks[$image_id].'"' : '' )?>><img class="swa-image-slider__image" src="<?= $imagepath; ?>" alt="Wohnung"></a>
+                        <a <?php echo (sizeof($this->imagelinks) > $image_id ? ($this->imagelinks[$image_id] != '' ? 'href="'.$this->imagelinks[$image_id].'"' : '') : '' )?>><img class="swa-image-slider__image" src="<?= $imagepath; ?>" alt="Wohnung"></a>
 						<?php $image_id++; ?>
                     </div>
             <?php endforeach; ?>

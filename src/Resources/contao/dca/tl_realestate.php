@@ -167,16 +167,15 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
             'sql' => "blob NULL"
         ],
         'slider_links' => [
-            'label' => array('Slider Links', 'Verlinkungen für die Slider Bilder'),//&$GLOBALS['TL_LANG']['tl_realestate']['slider_images'],
+            'label' => &$GLOBALS['TL_LANG']['tl_realestate']['slider_links'],
             'inputType' => 'listWizard',
 			'eval' => array(
-				'mandatory'=>true, 
+				'mandatory'=>false, 
 				'rgxp'=>'url', 
 				'decodeEntities'=>true, 
 				'maxlength'=>255, 
 				'tl_class'=>'w50 wizard'
 			),
-			//'wizard'		  => array(array('tl_content', 'pagePicker')),
 			'sql' => "blob NULL"
         ],
         'ddd_view' => [
