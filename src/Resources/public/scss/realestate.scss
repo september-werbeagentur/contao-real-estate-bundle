@@ -174,7 +174,12 @@ $timing-bezier: cubic-bezier(.66, .06, .4, .98);
       left: 0;
       transition: background-color .5s $timing-bezier;
     }
-
+	
+	&--active{
+		a{
+			position: relative;
+		}
+	}
     &--active::before {
       background-color: rgba(255, 255, 255, 0);
     }
