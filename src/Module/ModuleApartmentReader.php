@@ -76,6 +76,7 @@ class ModuleApartmentReader extends Module
         $objProject = RealestateModel::findByPk($objObject->pid);
         $this->Template->address = $objProject->address;
         $this->Template->projectName = $objProject->name;
+		$this->Template->objectName = $objObject->name;
 
         $this->Template->name = $objApartment->name;
         $this->Template->availability = $objApartment->availability;

@@ -5,6 +5,8 @@
     <a class="backlink" href="<?= $this->referer; ?>"><?= $this->back; ?></a>
     <h1 class="swa-apartment-reader__heading">Wohnung Nr. <?= $this->number; ?>, <?= $this->floor; ?></h1>
     <aside class="swa-apartment-reader__address"><?= $this->projectName; ?><br><?= $this->address; ?></aside>
+	<aside style="display: none;" class="swa-apartment-reader__project-name"><?= $this->projectName?></aside>
+	<aside style="display: none;" class="swa-apartment-reader__appartment-full-name"><?= $this->objectName.' / Nr. '.$this->number.', '.$this->floor; ?></aside>
 
     <?php //TODO make alt text maintainable in backend ?>
     <div class="swa-apartment-reader__overview">
