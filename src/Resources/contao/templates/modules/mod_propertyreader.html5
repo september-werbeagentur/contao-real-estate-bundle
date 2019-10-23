@@ -22,7 +22,7 @@
     </article>
     <?php if (count($this->sliderImagePaths) > 0) : ?>
         <div class="swa-property-reader__slider">
-            <?php $this->insert('mod_imageslider', array('imagepaths' => $this->sliderImagePaths)); ?>
+            <?php $this->insert('mod_imageslider', array('imagepaths' => $this->sliderImagePaths, 'imagelinks' => $this->sliderImageLinks)); ?>
         </div>
     <?php endif; ?>
     <h2>Ausstattungsdetails</h2>

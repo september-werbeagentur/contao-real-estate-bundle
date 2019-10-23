@@ -13,3 +13,4 @@ node_modules/
 
 # Project files
 src/Resources/public/realestate.css.map
+.DS_Store

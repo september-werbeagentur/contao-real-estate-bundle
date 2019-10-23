@@ -8,13 +8,15 @@
         <div id="swa-image-slider__control--previous" class="swa-image-slider__control swa-image-slider__control--previous"></div>
         <div id="swa-image-slider__control--next" class="swa-image-slider__control swa-image-slider__control--next"></div>
         <div id="swa-image-slider__slides" class="swa-image-slider__slides" style="width:<?= count($this->imagepaths) * 100;?>%" >
+		<?php $image_id = 0; ?>
             <?php
                 foreach ($this->imagepaths as $imagepath) : ?>
                     <div class="swa-image-slider__slide"
                         src="<?= $imagepath; ?>"
                         alt="Wohnung"
                         style="width: <?= 100/count($this->imagepaths); ?>%" >
-                        <img class="swa-image-slider__image" src="<?= $imagepath; ?>" alt="Wohnung">
+                        <a <?php echo (sizeof($this->imagelinks) > $image_id ? ($this->imagelinks[$image_id] != '' ? 'href="'.$this->imagelinks[$image_id].'"' : '') : '' )?>><img class="swa-image-slider__image" src="<?= $imagepath; ?>" alt="Wohnung"></a>
+						<?php $image_id++; ?>
                     </div>
             <?php endforeach; ?>
         </div>

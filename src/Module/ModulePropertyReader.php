@@ -79,6 +79,7 @@ class ModulePropertyReader extends Module
         $this->Template->ddd_view_link = $objProperty->ddd_view_link;
 
         $this->Template->sliderImagePaths = $this->getImages($objProperty->slider_images);
+		$this->Template->sliderImageLinks = StringUtil::deserialize($objProperty->slider_links);
 
         $objObjects = RealestateObjectsModel::findAllByPid($objProperty->id);
         if ($objObjects !== null) {

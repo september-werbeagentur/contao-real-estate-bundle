@@ -58,7 +58,7 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
     ],
     'palettes' => [
         '__selector__' => [],
-        'default' => '{header_legend},name,address,logo,image,pdf_path,ddd_view,ddd_view_link;{details_legend},banner,teaser,description_heading,description,slider_images,features',
+        'default' => '{header_legend},name,address,logo,image,pdf_path,ddd_view,ddd_view_link;{details_legend},banner,teaser,description_heading,description,slider_images,slider_links,features',
     ],
     'fields' => [
         'id' => [
@@ -126,7 +126,7 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
             'inputType' => 'listWizard',
             'eval' => [
                 'maxlength' => 60,
-                'tl_class' => 'w50'
+                'tl_class' => 'clr w50'
             ],
             'sql' => "blob NULL"
         ],
@@ -165,6 +165,18 @@ $GLOBALS['TL_DCA']['tl_realestate'] = [
                 'multiple' => true,
             ],
             'sql' => "blob NULL"
+        ],
+        'slider_links' => [
+            'label' => &$GLOBALS['TL_LANG']['tl_realestate']['slider_links'],
+            'inputType' => 'listWizard',
+			'eval' => array(
+				'mandatory'=>false, 
+				'rgxp'=>'url', 
+				'decodeEntities'=>true, 
+				'maxlength'=>255, 
+				'tl_class'=>'w50 wizard'
+			),
+			'sql' => "blob NULL"
         ],
         'ddd_view' => [
             'label' => &$GLOBALS['TL_LANG']['tl_realestate']['ddd_view'],
